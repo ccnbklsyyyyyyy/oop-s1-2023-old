@@ -4,7 +4,7 @@ double array_mean(int array[], int n) {
         return 0.0;
     }
 
-    int sum = array_sum(array, n);
-    double mean = static_cast<double>(sum) / static_cast<double>(n);
-    return mean;
+    int sum = array_sum(array, n); // Reuse the previously defined array_sum function
+    return static_cast<double>(sum) / n;
 }
+

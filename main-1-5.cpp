@@ -1,10 +1,12 @@
 #include <iostream>
-#include "function-1-5.h"
+#include "function-1-5.cpp" // Include the implementation of count_evens function
 
 int main() {
-    int num = 10;
-    int even_count = count_evens(num);
-    std::cout << "Number of even numbers between 1 and " << num << ": " << even_count << std::endl;
+    int number = 10;
+
+    // Test function 1-5: count_evens
+    int even_count = count_evens(number);
+    std::cout << "Number of even numbers between 1 and " << number << ": " << even_count << std::endl;
 
     return 0;
 }

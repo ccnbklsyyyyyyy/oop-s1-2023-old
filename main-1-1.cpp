@@ -1,12 +1,13 @@
 #include <iostream>
-#include "function-1-1.cpp"
+#include "function-1-1.cpp" // Include the implementation of array_sum function
 
 int main() {
-    int array[] = {1, 2, 3, 4, 5};
-    int n = sizeof(array) / sizeof(array[0]);
+    const int size = 5;
+    int arr[size] = {3, 6, 2, 8, 1};
 
-    int result = array_sum(array, n);
-    std::cout << "Sum of elements in the array: " << result << std::endl;
+    // Test function 1-1: array_sum
+    int sum = array_sum(arr, size);
+    std::cout << "Sum of array elements: " << sum << std::endl;
 
     return 0;
 }

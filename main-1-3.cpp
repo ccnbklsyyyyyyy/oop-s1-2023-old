@@ -1,11 +1,12 @@
 #include <iostream>
-#include "function-1-5.cpp"
+#include "function-1-3.cpp" // Include the implementation of num_count function
 
 int main() {
-    int number = 10;
-
-    int result = count_evens(number);
-    std::cout << "Number of even numbers between 1 and " << number << " (inclusive): " << result << std::endl;
+    const int size = 5;
+    int arr[size] = {3, 6, 2, 8, 1};
+    int number = 2;
+    int count = num_count(arr, size, number);
+    std::cout << "Number of occurrences of " << number << ": " << count << std::endl;
 
     return 0;
 }

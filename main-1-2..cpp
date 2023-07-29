@@ -1,12 +1,13 @@
 #include <iostream>
-#include "function-1-2.h"
+#include "function-1-2.cpp" // Include the implementation of array_mean function
 
 int main() {
-    int arr1[] = {1, 2, 3, 4, 5};
-    int size = sizeof(arr1) / sizeof(arr1[0]);
+    const int size = 5;
+    int arr[size] = {3, 6, 2, 8, 1};
 
-    double mean = array_mean(arr1, size);
-    std::cout << "Mean of array 1: " << mean << std::endl;
+    // Test function 1-2: array_mean
+    double mean = array_mean(arr, size);
+    std::cout << "Mean of array elements: " << mean << std::endl;
 
     return 0;
 }
