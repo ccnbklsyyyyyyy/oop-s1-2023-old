@@ -1,12 +1,17 @@
 #include <iostream>
-#include "function-1-5.cpp" // Include the implementation of count_evens function
+#include "function-1-5.cpp"
 
 int main() {
-    int number = 10;
+    int matrix1[3][3] = {
+            {0, 1, 2},
+            {3, 4, 5},
+            {6, 7, 8}
+    };
 
-    // Test function 1-5: count_evens
-    int even_count = count_evens(number);
-    std::cout << "Number of even numbers between 1 and " << number << ": " << even_count << std::endl;
+    int matrix2[3][3] = {
+            {0, 0, 0},
+            {2, 2, 2},
+            {-5, -4, 8}
+    };
 
-    return 0;
-}
+    print_summed(matrix

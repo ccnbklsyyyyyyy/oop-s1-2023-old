@@ -1,12 +1,9 @@
-// function-1-1.cpp
-int array_sum(int array[], int n) {
-    if (n < 1) {
-        return 0;
-    }
+#include <iostream>
 
-    int sum = 0;
-    for (int i = 0; i < n; i++) {
-        sum += array[i];
+int sum_diagonal(int array[4][4]) {
+    int diagonalSum = 0;
+    for (int i = 0; i < 4; i++) {
+        diagonalSum += array[i][i];
     }
-    return sum;
+    return diagonalSum;
 }

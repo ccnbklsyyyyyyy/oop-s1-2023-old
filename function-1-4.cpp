@@ -1,12 +1,10 @@
-// function-1-4.cpp
-int sum_two_arrays(int array[], int secondarray[], int n) {
-    if (n < 1) {
-        return 0;
-    }
+#include <iostream>
 
-    int sum = 0;
-    for (int i = 0; i < n; i++) {
-        sum += array[i] + secondarray[i];
+void print_scaled(int array[3][3], int scale) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            std::cout << array[i][j] * scale << " ";
+        }
+        std::cout << std::endl;
     }
-    return sum;
 }

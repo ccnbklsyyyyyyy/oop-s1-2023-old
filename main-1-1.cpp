@@ -1,13 +1,16 @@
 #include <iostream>
-#include "function-1-1.cpp" // Include the implementation of array_sum function
+#include "function-1-1.cpp"
 
 int main() {
-    const int size = 5;
-    int arr[size] = {3, 6, 2, 8, 1};
+    int matrix[4][4] = {
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12},
+            {13, 14, 15, 16}
+    };
 
-    // Test function 1-1: array_sum
-    int sum = array_sum(arr, size);
-    std::cout << "Sum of array elements: " << sum << std::endl;
+    int diagonalSum = sum_diagonal(matrix);
+    std::cout << "Sum of main diagonal: " << diagonalSum << std::endl;
 
     return 0;
 }

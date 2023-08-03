@@ -1,12 +1,15 @@
 #include <iostream>
-#include "function-1-3.cpp" // Include the implementation of num_count function
+#include "function-1-3.cpp"
 
 int main() {
-    const int size = 5;
-    int arr[size] = {3, 6, 2, 8, 1};
-    int number = 2;
-    int count = num_count(arr, size, number);
-    std::cout << "Number of occurrences of " << number << ": " << count << std::endl;
+    int matrix[4][4] = {
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 0, 1, 2},
+            {3, 4, 5, 6}
+    };
+
+    count_digits(matrix);
 
     return 0;
 }

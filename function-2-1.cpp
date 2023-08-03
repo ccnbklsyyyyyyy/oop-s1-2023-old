@@ -1,9 +1,9 @@
-int min_element(int array[], int n) {
-    int min = array[0];
-    for (int i = 1; i < n; i++) {
-        if (array[i] < min) {
-            min = array[i];
-        }
-    }
-    return min;
+#include <iostream>
+#include <bitset>
+
+void print_binary_str(std::string decimal_number) {
+    int decimal = std::stoi(decimal_number);
+    std::bitset<32> binary(decimal);
+    std::string binary_string = binary.to_string();
+    std::cout << binary_string.substr(binary_string.find('1')) << std::endl;
 }

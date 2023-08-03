@@ -1,9 +1,9 @@
-int max_element(int array[], int n) {
-    int max = array[0];
-    for (int i = 1; i < n; i++) {
-        if (array[i] > max) {
-            max = array[i];
-        }
+#include <iostream>
+
+int binary_to_int(int binary_digits[], int number_of_digits) {
+    int result = 0;
+    for (int i = 0; i < number_of_digits; i++) {
+        result = result * 2 + binary_digits[i];
     }
-    return max;
+    return result;
 }

@@ -1,9 +1,16 @@
 #include <iostream>
-
-void two_five_nine(int array[], int n);
+#include "function-2-3.cpp"
 
 int main() {
-    int arr[] = {2, 2, 5, 9, 9, 9, 5};
-    two_five_nine(arr, 7);
+    int palindrome_array[] = {1, 2, 3, 2, 1}; // Example palindrome array
+    int length = 5; // Size of the array
+
+    int result = sum_if_palindrome(palindrome_array, length);
+    if (result == -2) {
+        std::cout << "Not a palindrome array." << std::endl;
+    } else {
+        std::cout << "Sum of elements: " << result << std::endl;
+    }
+
     return 0;
 }

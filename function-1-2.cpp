@@ -1,11 +1,12 @@
-// function-1-2.cpp
-int array_sum(int array[], int n); // Forward declaration of array_sum function
+#include <iostream>
 
-double array_mean(int array[], int n) {
-    if (n < 1) {
-        return 0.0;
+int is_identity(int array[10][10]) {
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if ((i == j && array[i][j] != 1) || (i != j && array[i][j] != 0)) {
+                return 0;
+            }
+        }
     }
-
-    int sum = array_sum(array, n); // Reuse the previously defined array_sum function
-    return static_cast<double>(sum) / n;
+    return 1;
 }
