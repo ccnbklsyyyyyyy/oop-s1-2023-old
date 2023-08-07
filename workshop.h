@@ -4,6 +4,7 @@
 void changeValue(double* ptr);
 void printArray(double* arrPtr, int size);
 double arrayMax(double* arrPtr, int size);
-double* dynamicArray(int size, double initialValue);
+double* dynamicArray(int N);
+double* dynamicArray(int N, double M);
 
-#endif
+#endif // WORKSHOP_H
