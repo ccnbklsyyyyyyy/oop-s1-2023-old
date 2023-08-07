@@ -1,16 +1,9 @@
-#include <iostream>
+#ifndef WORKSHOP_H
+#define WORKSHOP_H
 
-void changeValue(double* ptr) {
-    *ptr = 42.0;
-}
+void changeValue(double* ptr);
+void printArray(double* arr, int size);
+double arrayMax(double* arr, int size);
+double* dynamicArray(int size, double initialValue);
 
-int main() {
-    double num = 7.77;
-    double* numPtr = &num;
-
-    std::cout << "Original value of num: " << num << std::endl;
-    changeValue(numPtr);
-    std::cout << "Modified value of num: " << num << std::endl;
-
-    return 0;
-}
+#endif
