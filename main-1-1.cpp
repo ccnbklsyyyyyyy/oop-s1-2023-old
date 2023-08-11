@@ -1,16 +1,11 @@
-#include <iostream>
 #include "function-1-1.cpp"
 
 int main() {
-    int matrix[4][4] = {
-            {1, 2, 3, 4},
-            {5, 6, 7, 8},
-            {9, 10, 11, 12},
-            {13, 14, 15, 16}
+    int my_array[10][10] = {
+            {10,20,30,40,50,60,70,80,90,100},
+            {110,120,130,140,150,160,170,180,190,200},
+
     };
-
-    int diagonalSum = sum_diagonal(matrix);
-    std::cout << "Sum of main diagonal: " << diagonalSum << std::endl;
-
-    return 0;
+    my_print_function(my_array);
+    return  0;
 }

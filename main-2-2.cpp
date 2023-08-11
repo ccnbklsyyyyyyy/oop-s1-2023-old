@@ -2,11 +2,11 @@
 #include "function-2-2.cpp"
 
 int main() {
-    int binary_digits[] = {1, 0, 1, 0, 1}; // Example binary array
-    int number_of_digits = 5; // Size of the array
+    int binaryArray[] = {1,0,1,0};
+    int arraySize = sizeof(binaryArray) / sizeof(binaryArray[0]);
+    int decimalValue = bin_to_int(binaryArray,arraySize);
 
-    int result = binary_to_int(binary_digits, number_of_digits);
-    std::cout << "Binary to Integer: " << result << std::endl;
+    std::cout << "Binary to Decimal: " << decimalValue << std::endl;
 
     return 0;
 }

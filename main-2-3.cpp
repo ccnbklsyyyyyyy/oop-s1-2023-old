@@ -1,16 +1,15 @@
-#include <iostream>
 #include "function-2-3.cpp"
+int  main() {
+    int arr1[] = {1,2,2,1};
+    int arr2[] = {1,2,3,4};
 
-int main() {
-    int palindrome_array[] = {1, 2, 3, 2, 1}; // Example palindrome array
-    int length = 5; // Size of the array
+    int length1 = sizeof(arr1) / sizeof (arr1[0]);
+    int length2 = sizeof(arr2) / sizeof (arr2[0]);
 
-    int result = sum_if_palindrome(palindrome_array, length);
-    if (result == -2) {
-        std::cout << "Not a palindrome array." << std::endl;
-    } else {
-        std::cout << "Sum of elements: " << result << std::endl;
-    }
+    int result1 = palindrome_sum(arr1,length1);
+    int result2 = palindrome_sum(arr2,length2);
 
+    std::cout << "result1: " <<result1 <<std::endl;
+    std::cout << "result2: " <<result2 <<std::endl;
     return 0;
 }

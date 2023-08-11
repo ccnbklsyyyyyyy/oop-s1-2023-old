@@ -1,9 +1,10 @@
 #include <iostream>
+#include <cmath>
 
-int binary_to_int(int binary_digits[], int number_of_digits) {
-    int result = 0;
-    for (int i = 0; i < number_of_digits; i++) {
-        result = result * 2 + binary_digits[i];
+int bin_to_int(int binaryDigits[],int numberOfDigits){
+    int decimaValue = 0;
+    for (int i = numberOfDigits -1; i >= 0; i--) {
+        decimaValue += binaryDigits[i] * std::pow(2, numberOfDigits -1 -i);
     }
-    return result;
+    return decimaValue;
 }
