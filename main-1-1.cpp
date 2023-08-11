@@ -6,6 +6,6 @@ int main() {
             {110,120,130,140,150,160,170,180,190,200},
 
     };
-    my_print_function(my_array);
+    print_matrix(my_array);
     return  0;
 }
