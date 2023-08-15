@@ -1,15 +1,15 @@
 #include "function-3-1.cpp"
 
 int main() {
-    int *array1 = readNumbers();
-    int *array2 = readNumbers();
+    int *numbers1 = readNumbers();
+    int *numbers2 = readNumbers();
 
-    bool result = areArraysEqual(array1, array2, 10);
+    bool result = areArraysEqual(numbers1, numbers2, 10);
 
     std::cout << "Arrays are equal: " << (result ? "true" : "false") << std::endl;
 
-    delete[] array1;
-    delete[] array2;
+    delete[] numbers1;
+    delete[] numbers2;
 
     return 0;
 }

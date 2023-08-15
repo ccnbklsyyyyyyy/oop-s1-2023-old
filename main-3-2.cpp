@@ -6,7 +6,7 @@
 
 int main() {
     int *originalArray = readNumbers();
-    int *reversedArray = reverseIntArray(originalArray, 10);
+    int *reversedArray = reverseArray(originalArray, 10);
 
     bool result = areArraysEqual(originalArray, reversedArray, 10);
 

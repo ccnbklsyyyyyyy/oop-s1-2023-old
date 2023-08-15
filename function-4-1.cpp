@@ -1,10 +1,7 @@
-//
-// Created by c on 15/8/2023.
-//
 #include <iostream>
 #include <climits>
 
-int findSecondSmallestSum(int *arr, int length) {
+int secondSmallestSum(int *numbers, int length) {
     if (length <= 1) {
         return INT_MAX;
     }
@@ -15,7 +12,7 @@ int findSecondSmallestSum(int *arr, int length) {
     for (int i = 0; i < length; ++i) {
         int currentSum = 0;
         for (int j = i; j < length; ++j) {
-            currentSum += arr[j];
+            currentSum += numbers[j];
             if (currentSum < smallestSum) {
                 secondSmallestSum = smallestSum;
                 smallestSum = currentSum;
