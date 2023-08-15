@@ -1,19 +1,19 @@
-// main-3-2.cpp
-
-#include <stdio.h>
-
-int median_array(int array[], int n);
+//
+// Created by c on 15/8/2023.
+//
+#include "function-3-2.cpp"
+#include "function-3-1.cpp"
 
 int main() {
-    // Test median_array function
-    int array1[] = {3, 5, 2, 1, 4};
-    int array2[] = {1, 2, 3, 4};
+    int *originalArray = readNumbers();
+    int *reversedArray = reverseIntArray(originalArray, 10);
 
-    int median1 = median_array(array1, 5);
-    int median2 = median_array(array2, 4);
+    bool result = areArraysEqual(originalArray, reversedArray, 10);
 
-    printf("Median of array1 is %d.\n", median1);
-    printf("Median of array2 is %d.\n", median2);
+    std::cout << "Arrays are equal: " << (result ? "true" : "false") << std::endl;
+
+    delete[] originalArray;
+    delete[] reversedArray;
 
     return 0;
 }

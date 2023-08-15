@@ -1,11 +1,10 @@
 #include "function-1-1.cpp"
 
 int main() {
-    int my_array[10][10] = {
-            {10,20,30,40,50,60,70,80,90,100},
-            {110,120,130,140,150,160,170,180,190,200},
+    int *numbers = readNumbers();
+    printNumbers(numbers, 10);
 
-    };
-    print_matrix(my_array);
-    return  0;
+    delete[] numbers; // Deallocate the dynamically allocated array
+    function-2-1
+    return 0;
 }

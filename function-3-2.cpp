@@ -1,12 +1,11 @@
-// function-3-2.cpp
+#include <iostream>
 
-#include <algorithm>
+int *reverseIntArray(int *arr, int length) {
+    int *reversedArray = new int[length];
 
-int median_array(int array[], int n) {
-    if (n % 2 == 0 || n < 1) {
-        return 0;
+    for (int i = 0; i < length; ++i) {
+        reversedArray[i] = arr[length - 1 - i];
     }
 
-    std::sort(array, array + n);
-    return array[n / 2];
+    return reversedArray;
 }

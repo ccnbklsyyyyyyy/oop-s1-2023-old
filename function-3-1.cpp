@@ -1,14 +1,12 @@
-// function-3-1.cpp
+#include <iostream>
 
-#include <stdbool.h>
-
-bool is_fanarray(int array[], int n) {
-    if (n < 1) {
+bool areArraysEqual(int *arr1, int *arr2, int length) {
+    if (length <= 0) {
         return false;
     }
 
-    for (int i = 0; i < n / 2; i++) {
-        if (array[i] != array[n - 1 - i] || array[i] != i + 1) {
+    for (int i = 0; i < length; ++i) {
+        if (arr1[i] != arr2[i]) {
             return false;
         }
     }

@@ -1,12 +1,19 @@
 #include <iostream>
 
-void print_matrix(int array[10][10]) {
-    for (int row = 0; row < 10; ++row) {
-        for (int col = 0; col < 10;++col) {
-            std::cout << array[row][col];
-            if (col != 9) {
-                std::cout << " ";
-            }
-        }
+int *readNumbers() {
+    int *numbers = new int[10];
+
+    std::cout << "Please enter 10 integer numbers:" << std::endl;
+    for (int i = 0; i < 10; ++i) {
+        std::cin >> numbers[i];
+    }
+
+    return numbers;
+}
+
+void printNumbers(int *numbers, int length) {
+    std::cout << "Printing the array:" << std::endl;
+    for (int i = 0; i < length; ++i) {
+        std::cout << "Index " << i << ": " << numbers[i] << std::endl;
     }
 }
