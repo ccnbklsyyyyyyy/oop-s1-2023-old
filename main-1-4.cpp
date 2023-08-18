@@ -1,15 +1,16 @@
 #include <iostream>
-#include "function-1-4.cpp"
+#include "Person.h"
 
 int main() {
-    int scale = 3;
-    int matrix[3][3] = {
-            {0, 1, 2},
-            {3, 4, 5},
-            {6, 7, 8}
-    };
+    int n = 2;
 
-    print_scaled(matrix, scale);
+    PersonList originalList = createPersonList(n);
+    PersonList shallowCopiedList = shallowCopyPersonList(originalList);
+
+    std::cout << "Shallow Copied Person List:" << std::endl;
+    for (int i = 0; i < shallowCopiedList.numPeople; ++i) {
+        std::cout << "Shallow Copied Person " << i + 1 << ": Name = " << shallowCopiedList.people[i].name << ", Age = " << shallowCopiedList.people[i].age << std::endl;
+    }
 
     return 0;
 }

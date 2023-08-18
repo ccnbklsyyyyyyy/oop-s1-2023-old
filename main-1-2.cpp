@@ -1,26 +1,17 @@
 #include <iostream>
-#include "function-1-2.cpp"
+#include "Person.h"
 
 int main() {
-    int identityMatrix[10][10] = {
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
-    };
+    int n = 3;
 
-    int result = is_identity(identityMatrix);
-    if (result == 1) {
-        std::cout << "The matrix is an identity matrix." << std::endl;
-    } else {
-        std::cout << "The matrix is not an identity matrix." << std::endl;
+    PersonList personList = createPersonList(n);
+
+    std::cout << "Created Person List:" << std::endl;
+    for (int i = 0; i < personList.numPeople; ++i) {
+        std::cout << "Person " << i + 1 << ": Name = " << personList.people[i].name << ", Age = " << personList.people[i].age << std::endl;
     }
+
+    delete[] personList.people;
 
     return 0;
 }

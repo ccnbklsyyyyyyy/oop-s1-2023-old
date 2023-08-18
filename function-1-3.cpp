@@ -1,20 +1,12 @@
-#include <iostream>
+#include "Person.h"
 
-void count_digits(int array[4][4]) {
-    int digitCount[10] = {0};
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            int digit = array[i][j];
-            digitCount[digit]++;
-        }
+PersonList deepCopyPersonList(PersonList pl) {
+    PersonList newPL;
+    newPL.numPeople = pl.numPeople;
+    newPL.people = new Person[pl.numPeople];
+    for (int i = 0; i < pl.numPeople; ++i) {
+        newPL.people[i].name = pl.people[i].name;
+        newPL.people[i].age = pl.people[i].age;
     }
-
-    std::cout << "Digit counts: ";
-    for (int i = 0; i < 10; i++) {
-        if (i > 0) {
-            std::cout << ";";
-        }
-        std::cout << i << ":" << digitCount[i];
-    }
-    std::cout << std::endl;
+    return newPL;
 }

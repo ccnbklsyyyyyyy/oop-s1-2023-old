@@ -1,12 +1,12 @@
-#include <iostream>
+#include "Person.h"
 
-int is_identity(int array[10][10]) {
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            if ((i == j && array[i][j] != 1) || (i != j && array[i][j] != 0)) {
-                return 0;
-            }
-        }
+PersonList createPersonList(int n) {
+    PersonList pl;
+    pl.numPeople = n;
+    pl.people = new Person[n];
+    for (int i = 0; i < n; ++i) {
+        pl.people[i].name = "Jane Doe";
+        pl.people[i].age = 1;
     }
-    return 1;
+    return pl;
 }
