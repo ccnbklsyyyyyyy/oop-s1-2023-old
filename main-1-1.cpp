@@ -1,12 +1,15 @@
-#include <iostream>
-#include "Musician.h"
+#include<iostream>
+#include "Asset.h"
 
-int main() {
-    Musician m1;
-    std::cout << "Default instrument: " << m1.get_instrument() << ", Default experience: " << m1.get_experience() << std::endl;
+int main(){
+    Asset defaultAsset;
+    std::cout << "Default asset type: "<<
+    defaultAsset.get_value() << ", Value: "<<
+    std::endl;
 
-    Musician m2("guitar", 5);
-    std::cout << "Instrument: " << m2.get_instrument() << ", Experience: " << m2.get_experience() << std::endl;
-
+    Asset customAsset(1500,"Bonds");
+    std::cout << "Custom asset type :"<<
+    customAsset.get_product_type() << " , Value :"<<customAsset.get_value() <<
+    std::endl;
     return 0;
 }
