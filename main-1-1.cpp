@@ -1,15 +1,28 @@
-#include<iostream>
-#include "Asset.h"
+#include <iostream>
+#include "player.h"
+#include "wizard.h"
+#include "warrior.h"
+using namespace std;
 
-int main(){
-    Asset defaultAsset;
-    std::cout << "Default asset type: "<<
-    defaultAsset.get_value() << ", Value: "<<
-    std::endl;
+int main() {
+    // 创建一个巫师对象和一个战士对象
+    Wizard wizard("Gandalf", 100, 20, 50);
+    Warrior warrior("Aragorn", 120, 25, "Sword");
 
-    Asset customAsset(1500,"Bonds");
-    std::cout << "Custom asset type :"<<
-    customAsset.get_product_type() << " , Value :"<<customAsset.get_value() <<
-    std::endl;
+    cout << "Let the battle begin!" << endl;
+
+    while (wizard.getHealth() > 0 && warrior.getHealth() > 0) {
+        wizard.castSpell(&warrior);
+        if (warrior.getHealth() > 0) {
+            warrior.swingWeapon(&wizard);
+        }
+    }
+
+    if (wizard.getHealth() > 0) {
+        cout << wizard.getName() << " wins!" << endl;
+    } else {
+        cout << warrior.getName() << " wins!" << endl;
+    }
+
     return 0;
 }
