@@ -1,27 +1,22 @@
 #include <iostream>
-#include "player.h"
-#include "wizard.h"
-#include "warrior.h"
-using namespace std;
+#include <vector>
+#include "Car.h"
+#include "Bus.h"
+#include "Motorbike.h"
+#include "ParkingLot.h"
 
 int main() {
-    // 创建一个巫师对象和一个战士对象
-    Wizard wizard("Gandalf", 100, 20, 50);
-    Warrior warrior("Aragorn", 120, 25, "Sword");
-
-    cout << "Let the battle begin!" << endl;
-
-    while (wizard.getHealth() > 0 && warrior.getHealth() > 0) {
-        wizard.castSpell(&warrior);
-        if (warrior.getHealth() > 0) {
-            warrior.swingWeapon(&wizard);
-        }
+    std::vector<Vehicle*> vehicles;
+    ParkingLot parkingLot(10);
+    for (Vehicle* vehicle : vehicles) {
+        parkingLot.parkVehicle(vehicle);
     }
 
-    if (wizard.getHealth() > 0) {
-        cout << wizard.getName() << " wins!" << endl;
-    } else {
-        cout << warrior.getName() << " wins!" << endl;
+    for (Vehicle* vehicle : vehicles) {
+        std::cout << "Vehicle ID: " << vehicle->getID()
+                  << ", Parking Duration: " << vehicle->getParkingDuration() << " seconds"
+                  << std::endl;
+        delete vehicle;
     }
 
     return 0;

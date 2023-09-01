@@ -1,32 +1,45 @@
 #include <iostream>
-#include "Orchestra.h"
-#include "Musician.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Motorbike.h"
+#include "ParkingLot.h"
 
 int main() {
-    Orchestra orchestra(5);
+    ParkingLot parkingLot(10);
 
-    Musician m1("violin", 5);
-    Musician m2("viola", 3);
-    Musician m3("cello", 7);
-    Musician m4("double bass", 2);
-    Musician m5("flute", 4);
-    Musician m6("trumpet", 6);
+    // Loop to park vehicles
+    while (parkingLot.getCount() < 10) {
+        int choice;
+        std::cout << "Select vehicle type (1: Car, 2: Bus, 3: Motorbike): ";
+        std::cin >> choice;
 
-    if (orchestra.add_musician(m1)) {
-        std::cout << "Added musician 1 to the orchestra" << std::endl;
-    } else {
-        std::cout << "Could not add musician 1 to the orchestra" << std::endl;
+        Vehicle* vehicle = nullptr;
+        int id = parkingLot.getCount() + 1;
+
+        switch (choice) {
+            case 1:
+                vehicle = new Car(id);
+                break;
+            case 2:
+                vehicle = new Bus(id);
+                break;
+            case 3:
+                vehicle = new Motorbike(id);
+                break;
+            default:
+                std::cout << "Invalid choice." << std::endl;
+        }
+
+        if (vehicle != nullptr) {
+            parkingLot.parkVehicle(vehicle);
+            std::cout << "Vehicle parked. ID: " << id << std::endl;
+        }
     }
 
-    // Similar code for other musicians...
-
-    std::cout << "The orchestra currently has " << orchestra.get_current_number_of_members() << " members" << std::endl;
-
-    if (orchestra.has_instrument("violin")) {
-        std::cout << "The orchestra has a violinist" << std::endl;
-    } else {
-        std::cout << "The orchestra does not have a violinist" << std::endl;
-    }
+    int unparkID;
+    std::cout << "Enter ID of vehicle to unpark: ";
+    std::cin >> unparkID;
+    parkingLot.unparkVehicle(unparkID);
 
     return 0;
 }
