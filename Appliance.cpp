@@ -1,17 +1,15 @@
 #include "Appliance.h"
 
-Appliance::Appliance(int powerRating) : powerRating(powerRating), powerOn(false) {}
+Appliance::Appliance() : powerRating(0), isOn(false) {}
+
+Appliance::Appliance(int powerRating) : powerRating(powerRating), isOn(false) {}
 
 void Appliance::turnOn() {
-    powerOn = true;
+    isOn = true;
 }
 
 void Appliance::turnOff() {
-    powerOn = false;
-}
-
-bool Appliance::isOn() const {
-    return powerOn;
+    isOn = false;
 }
 
 double Appliance::getPowerConsumption() const {

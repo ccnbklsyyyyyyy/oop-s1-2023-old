@@ -5,10 +5,11 @@
 
 class TV : public Appliance {
 public:
-    TV(int powerRating = 0, double screenSize = 0.0);
+    TV();
+    TV(int powerRating, double screenSize);
     void setScreenSize(double screenSize);
-    double getScreenSize() const override;
-    double getPowerConsumption() const override;
+    double getScreenSize() const;
+    double getPowerConsumption() const;
 
 private:
     double screenInches;

@@ -5,10 +5,11 @@
 
 class Fridge : public Appliance {
 public:
-    Fridge(int powerRating = 0, double volume = 0.0);
+    Fridge();
+    Fridge(int powerRating, double volume);
     void setVolume(double volume);
-    double getVolume() const override;
-    double getPowerConsumption() const override;
+    double getVolume() const;
+    double getPowerConsumption() const;
 
 private:
     double fridgeVolume;

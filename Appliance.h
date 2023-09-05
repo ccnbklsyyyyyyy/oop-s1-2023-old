@@ -3,17 +3,15 @@
 
 class Appliance {
 public:
-    Appliance(int powerRating = 0);
-    virtual ~Appliance() = default;
-
+    Appliance();
+    Appliance(int powerRating);
+    bool isOn;
     void turnOn();
     void turnOff();
-    bool isOn() const;
-    virtual double getPowerConsumption() const;
+    double getPowerConsumption() const;
 
-protected:
+private:
     int powerRating;
-    bool powerOn;
 };
 
 #endif

@@ -1,27 +1,30 @@
 #include "House.h"
 
-House::House() : numAppliances(0) {}
+House::House() : numAppliances(0), currentApplianceCount(0), appliances(nullptr) {}
 
-House::House(int numAppliances) : numAppliances(numAppliances) {}
+House::House(int numAppliances) : numAppliances(numAppliances), currentApplianceCount(0) {
+    appliances = new Appliance*[numAppliances];
+}
 
 House::~House() {
-    for (Appliance* appliance : appliances) {
-        delete appliance;
+    for (int i = 0; i < currentApplianceCount; ++i) {
+        delete appliances[i];
     }
+    delete[] appliances;
 }
 
 bool House::addAppliance(Appliance* appliance) {
-    if (appliances.size() < static_cast<size_t>(numAppliances)) {
-        appliances.push_back(appliance);
+    if (currentApplianceCount < numAppliances) {
+        appliances[currentApplianceCount++] = appliance;
         return true;
     }
     return false;
 }
 
 double House::getTotalPowerConsumption() const {
-    double totalPower = 0.0;
-    for (const Appliance* appliance : appliances) {
-        totalPower += appliance->getPowerConsumption();
+    double totalConsumption = 0.0;
+    for (int i = 0; i < currentApplianceCount; ++i) {
+        totalConsumption += appliances[i]->getPowerConsumption();
     }
-    return totalPower;
+    return totalConsumption;
 }

@@ -1,20 +1,20 @@
 #ifndef HOUSE_H
 #define HOUSE_H
 
-#include <vector>
 #include "Appliance.h"
 
 class House {
 public:
     House();
-    explicit House(int numAppliances);
-    ~House();
+    House(int numAppliances);
+    ~House(); // Destructor to deallocate appliance objects
     bool addAppliance(Appliance* appliance);
     double getTotalPowerConsumption() const;
 
 private:
-    std::vector<Appliance*> appliances;
+    Appliance** appliances;
     int numAppliances;
+    int currentApplianceCount;
 };
 
 #endif
