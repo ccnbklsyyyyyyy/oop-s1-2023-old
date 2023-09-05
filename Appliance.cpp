@@ -2,8 +2,12 @@
 
 Appliance::Appliance(int powerRating) : powerRating(powerRating), powerOn(false) {}
 
-void Appliance::togglePower() {
-    powerOn = !powerOn;
+void Appliance::turnOn() {
+    powerOn = true;
+}
+
+void Appliance::turnOff() {
+    powerOn = false;
 }
 
 bool Appliance::isOn() const {

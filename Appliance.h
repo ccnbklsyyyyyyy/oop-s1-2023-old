@@ -5,8 +5,9 @@ class Appliance {
 public:
     Appliance(int powerRating = 0);
     virtual ~Appliance() = default;
-    
-    void togglePower();
+
+    void turnOn();
+    void turnOff();
     bool isOn() const;
     virtual double getPowerConsumption() const;
 
